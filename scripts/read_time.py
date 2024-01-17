@@ -66,6 +66,8 @@ if __name__ == "__main__":
         branch = os.getenv("REF").split("/")[-1]
         repository =  os.getenv("REPOSITORY")
         new_image_url = f"https://raw.githubusercontent.com/{repository}/{branch}/OUT_FOLDER/{image_file}"
+        print('---------------------------------')
+        print(new_image_url)
         if(image_url and block_id):
             notion_helper.update_image_block_link(block_id,new_image_url)
     api_data = weread_api.get_api_data()
